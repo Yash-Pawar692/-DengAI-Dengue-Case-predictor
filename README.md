@@ -60,7 +60,7 @@ The graph below shows the importance of each feature considered by the Gradient 
 **Backward selection-**
 Backward selection algorithm eliminates features based on their p-value. After running backward selection, only one variable was eliminated which states that all other variables depict a significant p-value. This output did not result in any fruition for our analysis.
 
-** Splitting up the dataset-**
+**Splitting up the dataset-**
 We split up the dataset with respect to the cities. One dataframe consisted of 936 records for the city  ‘SJ’ and other consisted of 520 records for the city ‘IQ’.  The ran the same models on both the datasets and generated the following results.
 Model
 MAE(Mean Absolute Error) after data split
@@ -75,7 +75,7 @@ Random forest(Gradient Boosting)
 
 The MAE increased after data split. Therefore, using the whole dataset without split is the better option.
 
-##The Best Approach!
+## The Best Approach!
 All the models that we deployed for prediction provided us with fairly good values of mean absolute error. Furthermore, Gradient boosting provided us with the least MAE which I consider as the best approach. 
 There are several reasons why GB may be better than other benchmark models in some cases:
 GB typically has higher prediction accuracy than other benchmark models. This is because GB combines the predictions of multiple weak models in a way that reduces errors and biases, while other models rely on a single model, which can be prone to overfitting and underfitting.
@@ -84,6 +84,6 @@ GB can handle non-linear relationships between the dependent and independent var
 GB can handle missing values and handle them well, while other benchmark models may not be able to handle missing values.
 It is worth noting that GB is just one of many machine learning techniques, and the choice of which technique to use will depend on the specific task and the available data. In general, GB may be more suitable for tasks that require higher prediction accuracy and the ability to model non-linear relationships, while other benchmark models may be more suitable for tasks based on data size, complexity, speed of computation, and more.
 
-##Conclusion-
+## Conclusion-
 Our main purpose of this exploration is to find the best predictor to model the total cases per week in two cities Iquitos and San Juan. Based on the dataset collected from NCEI, and NCAR, we have trained a few models. The models used in this analysis are GLM (gamma distribution), GLM (Negative Binomial distribution), Random forests (bagging), and Random forests (gradient boosting). We have evaluated these models based on the performance metric mean absolute error (MAE). We have built these models with a single dataset for both cities and also split datasets, separate for each city. Random forest with gradient boosting on a single dataset was the best model based on the MAE. 
 This model was used by PATH on a test dataset and found that the MAE was 28.6010. Nonetheless, there is always room for improvement. We might further improve the score by including more features like windspeed, population, cyclic climate features (El Niño and La Niña), etc. Not only these, but we could also use prediction models to fill in the missing dataset used for training. These will help us model the cities better to predict the cases.
